@@ -1,0 +1,32 @@
+<div class="row">
+    <!-- Post Content Column -->
+    <div   class="col-lg-8">
+
+      <!-- Title -->
+      <h1 class="mt-4">{{ company.name }}</h1>
+
+      <!-- Preview Image -->
+      <img class="img-fluid rounded" [src]="'http://127.0.0.1:8000/storage/'+company.image" alt="">
+
+      <hr>
+
+      <!-- Post Content -->
+      <p class="lead">Company Description: </p>
+        <p>{{ company.description }}</p>
+      <p>Company Additional Information: </p>
+      <p>Address: {{ company.address }}</p>
+      <p>Is Private: {{ company.is_private == 1 ? 'Yes' : 'No' }}</p>
+      <p>Type: <select  disabled [value]="type" class="custom-select">
+        <option selected>Company Type</option>
+        <option value="1">Civil Company</option>
+        <option value="2">Limited Liability Company(LLC)</option>
+        <option value="3">Private Shareholding company</option>
+        <option value="4">Public Shareholding company</option>
+      </select></p>
+      <p>Website: {{ company.website }}</p>
+      <p>email: {{ company.email }}</p>
+      <p>Location:</p>
+      <div [innerHTML]="map"></div>
+      <hr>
+    </div>
+</div>

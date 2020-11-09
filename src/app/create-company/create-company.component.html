@@ -1,0 +1,76 @@
+<form enctype="multipart/form-data" (ngSubmit)="create()"  [formGroup]="companyForm" class="mt-5">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input name="name" formControlName="name" type="text" class="form-control" id="name" aria-describedby="Enter company's name" placeholder="Enter company's name" required>
+      <p class="text-danger" *ngIf="companyForm.controls.name.hasError('required') && submitted">The field is required</p>
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input name="email" formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter company's email" required>
+      <p class="text-danger" *ngIf="companyForm.controls.email.hasError('required') && submitted">The field is required</p>
+      <p class="text-danger" *ngIf="companyForm.controls.email.hasError('email') && submitted">The email is invalid</p>
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Google Maps Location</label>
+      <input name="map_location" formControlName="map_location" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter company's location" required>
+      <p class="text-danger" *ngIf="companyForm.controls.map_location.hasError('required') && submitted">The field is required</p>
+
+    </div>
+  
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input name="website" formControlName="website" type="text" class="form-control" id="inputwebsite" aria-describedby="emailHelp" placeholder="Enter company's website" required>
+      <p class="text-danger" *ngIf="companyForm.controls.website.hasError('required') && submitted">The field is required</p>
+
+    </div>
+  
+   
+  
+    <div class="form-group">
+      <label for="exampleInputEmail1">Company's Address</label>
+      <input name="address" formControlName="address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter company's address" required>
+      <p class="text-danger" *ngIf="companyForm.controls.address.hasError('required') && submitted">The field is required</p>
+
+    </div>
+  
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Company Description</label>
+        <textarea formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+        <p class="text-danger" *ngIf="companyForm.controls.description.hasError('required') && submitted">The field is required</p>
+      
+    </div>
+  
+  
+    <div class="form-group">
+      <label for="exampleInputType">Is the company private? </label>
+      <div class="custom-control custom-radio custom-control-inline">
+          <input type="checkbox" formControlName="is_private">
+          <p class="text-danger" *ngIf="companyForm.controls.is_private.hasError('required') && submitted">The field is required</p>
+
+  </div>
+
+    </div>
+  
+    <div class="form-group">
+    <select formControlName="type" class="custom-select">
+    <option value="" selected>Company Type</option>
+    <option value="1">Civil Company</option>
+    <option value="2">Limited Liability Company(LLC)</option>
+    <option value="3">Private Shareholding company</option>
+    <option value="4">Public Shareholding company</option>
+  </select>
+  <p class="text-danger" *ngIf="companyForm.controls.type.hasError('required') && submitted">The field is required</p>
+
+  </div>
+  <div class="form-group">
+      <label for="website">Company's Image </label>
+      <br>
+      <input #image name="website" formControlName="image" type="file" required>
+      <p class="text-danger" *ngIf="companyForm.controls.image.hasError('required') && submitted">The field is required</p>
+
+    </div>
+  
+    <button name="login" id="submit" type="submit" class="btn btn-primary">Create new company</button>
+  </form>

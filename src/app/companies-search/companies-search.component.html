@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <input (keypress)="search($event)" type="text" class="form-control" placeholder="Search By company name">
+    <div class="row">
+        <div *ngFor="let c of companies" class="col-4">
+            <div class="card m-3" style="width: 18rem;">
+                <img style="height: 300px;" class="card-img-top" [src]="'http://127.0.0.1:8000/storage/'+c.image" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{ c.name }}</h5>
+                  <p class="card-text">{{ c.description }}</p>
+                  <button class="btn btn-primary ml-2" (click)="view(c.id)">View</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
