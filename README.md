@@ -9,10 +9,10 @@ php artisan storage:link , to set the correct path for images to be stored and r
 and then the database provided(storage.sql) should be uploaded and setup on your localhost server.
 when the database is set, change the .env example file to .env or manually enter the new database to your
 .env file, when all is done you should run the following commands to complete the setup:
-php artisan serve
 php artisan passport:install
 php artisan key:gen
 php artisan optimize
+php artisan serve
 
 for the frontned you'll need to install angular by installing node and then runnning 
 npm install
